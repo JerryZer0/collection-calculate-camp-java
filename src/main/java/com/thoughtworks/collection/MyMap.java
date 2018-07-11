@@ -23,7 +23,8 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        return array.stream().map(n->letterList.get(n-1)).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
