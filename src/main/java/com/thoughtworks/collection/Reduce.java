@@ -42,11 +42,12 @@ public class Reduce {
 
     public int getIndexOfFirstEven() {
 //        throw new NotImplementedException();
-        return arrayList.stream().filter(n->n%2==0).findFirst().get();
+        return arrayList.indexOf(arrayList.stream().filter(n->n%2==0).findFirst().get());
     }
 
     public boolean isEqual(List<Integer> arrayList) {
         throw new NotImplementedException();
+
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
@@ -54,7 +55,9 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        List<Integer> list = arrayList.stream().filter(n->n%2!=0).collect(Collectors.toList());
+        return list.get(list.size()-1);
     }
 
     public int getIndexOfLastOdd() {
