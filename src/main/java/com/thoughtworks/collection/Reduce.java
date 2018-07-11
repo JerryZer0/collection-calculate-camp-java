@@ -46,8 +46,8 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
-
+//        throw new NotImplementedException();
+        return this.arrayList.equals(arrayList);
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
