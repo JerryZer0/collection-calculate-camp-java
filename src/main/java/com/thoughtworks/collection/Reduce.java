@@ -36,11 +36,13 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        return arrayList.stream().filter(n->n%2==0).findFirst().get();
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        return arrayList.stream().filter(n->n%2==0).findFirst().get();
     }
 
     public boolean isEqual(List<Integer> arrayList) {
