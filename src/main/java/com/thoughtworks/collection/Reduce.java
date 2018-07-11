@@ -61,6 +61,8 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        List<Integer> list = arrayList.stream().filter(n->n%2!=0).collect(Collectors.toList());
+        return arrayList.indexOf(list.get(list.size()-1));
     }
 }
