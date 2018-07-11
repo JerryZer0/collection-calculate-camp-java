@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Flaten {
 
@@ -24,6 +25,13 @@ public class Flaten {
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        for(Integer[] tempList:array){
+            for (Integer integer:tempList){
+                list.add(integer);
+            }
+        }
+        return list.stream().distinct().collect(Collectors.toList());
     }
 }
