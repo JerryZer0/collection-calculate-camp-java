@@ -3,6 +3,8 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -14,16 +16,17 @@ public class Reduce {
 
     public int getMaximum() {
 //        throw new NotImplementedException();
-        return  arrayList.stream().reduce(Integer.MIN_VALUE,Integer::max);
+        return arrayList.stream().reduce(Integer.MIN_VALUE,Integer::max);
     }
 
     public double getMinimum() {
 //        throw new NotImplementedException();
-        return  arrayList.stream().reduce(Integer.MAX_VALUE,Integer::min);
+        return arrayList.stream().reduce(Integer.MAX_VALUE,Integer::min);
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        return arrayList.stream().collect(Collectors.averagingInt(n->n));
     }
 
     public double getOrderedMedian() {
