@@ -25,8 +25,8 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
-
+//        throw new NotImplementedException();
+        return firstList.stream().filter(n->secondList.contains(n)).collect(Collectors.toList());
     }
 
     public List<Integer> getDifferentElements() {
