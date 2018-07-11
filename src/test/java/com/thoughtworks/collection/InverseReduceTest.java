@@ -19,9 +19,10 @@ public class InverseReduceTest {
             InverseReduce inverseReduce = new InverseReduce(random);
 
         Integer[] result = new Integer[]{7, 5, 3, 1};
+//        Integer[] result = new Integer[]{8, 6, 4, 2, 0};
         List<Integer> resultList = Arrays.asList(result);
 
-        assertThat(inverseReduce.divideToSmaller(9)).isEqualTo(resultList);
+        assertThat(inverseReduce.divideToSmaller(10)).isEqualTo(resultList);
     }
 }
 
