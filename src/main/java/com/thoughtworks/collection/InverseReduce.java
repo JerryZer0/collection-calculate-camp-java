@@ -21,6 +21,6 @@ public class InverseReduce {
     public List<Integer> divideToSmaller(int number) {
 //        throw new NotImplementedException();
         List<Integer> list = IntStream.range(0,number-1).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-        return list.stream().filter(n->n%2==list.get(0)%2).collect(Collectors.toList());
+        return list.stream().filter(n->n%2==list.get(1)%2).collect(Collectors.toList());
     }
 }

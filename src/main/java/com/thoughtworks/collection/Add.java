@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -10,6 +11,11 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Add {
+
+    //add
+    private List<Integer> getEventList(List<Integer> arrayList){
+        return arrayList.stream().filter(n->n%2==0).collect(Collectors.toList());
+    }
 
     public int getSumOfEvens(int leftBorder, int rightBorder) {
 //        throw new NotImplementedException();
@@ -74,9 +80,15 @@ public class Add {
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
         //throw new NotImplementedException();
-        List<Integer> list = arrayList.stream().skip(1).collect(Collectors.toList());
-        for(int i = 0; i < list.size();i++ )
-            list.set(i,3*(list.get(i)+arrayList.get(i)));
+//        List<Integer> list = arrayList.stream().skip(1).collect(Collectors.toList());
+//        for(int i = 0; i < list.size();i++ )
+//            list.set(i,3*(list.get(i)+arrayList.get(i)));
+//        return list;
+        List<Integer> list = new ArrayList<>();
+        arrayList.stream().reduce((num1,num2)->{
+            list.add((num1+num2)*3);
+            return num2;
+        });
         return list;
     }
 }
